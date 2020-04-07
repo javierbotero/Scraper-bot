@@ -1,5 +1,6 @@
 class Product
   attr_reader :name, :price_before, :price_now, :available
+  @@products = 0
 
   def initialize (name, price_now, available, link, price_before=false, promotion=false)
     @name = name
@@ -8,6 +9,7 @@ class Product
     @available = available
     @link = link
     @promotion = promotion
+    @@products += 1 
   end
 
   def showinfo
@@ -20,11 +22,38 @@ class Product
   end
 end
 
-class CamerasDslr < Product
-  attr_reader :cameras
-  @@cameras = 0
-
+class Audio < Product  
+  @@audio_products = 0  
   def initialize
-    @@cameras =+ 1
+    super
+    @@audio_products += 1
+  end
+
+  def self.products
+    @@audio_products
+  end
+end
+
+class Photography < Product
+  @@photography_products = 0
+  def initialize
+    super
+    @@photography_products += 1
+  end
+
+  def self.products
+    @@photography_products
+  end
+end 
+
+class Gps < Product  
+  @@gps_products = 0
+  def initialize
+    super
+    @@gps_products += 1
+  end
+
+  def self.products
+    @@video_products
   end
 end
