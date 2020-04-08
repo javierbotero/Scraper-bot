@@ -1,24 +1,11 @@
-class Product
-  attr_reader :name, :price_before, :price_now, :available
+class Product  
   @@products = 0
-
-  def initialize (name, price_now, available, link, price_before=false, promotion=false)
-    @name = name
-    @price_before = price_before
-    @price_now = price_now
-    @available = available
-    @link = link
-    @promotion = promotion
+  def initialize
     @@products += 1 
   end
 
-  def showinfo
-    puts "Product: #{@name}\n
-          Price now: #{@price_now}\n
-          Price before: #{@price_before ? @price_before : 'No info'}\n
-          Promotion: #{@promotion ? @promotion : 'No promotion'}\n
-          Product's link: #{@link}\n
-          Avalability: #{@available ? 'Yes' : 'No'}"
+  def self.products
+    @@products                  
   end
 end
 
@@ -29,7 +16,7 @@ class Audio < Product
     @@audio_products += 1
   end
 
-  def self.products
+  def self.audio_products
     @@audio_products
   end
 end
@@ -41,7 +28,7 @@ class Photography < Product
     @@photography_products += 1
   end
 
-  def self.products
+  def self.photography_products
     @@photography_products
   end
 end 
@@ -53,7 +40,7 @@ class Gps < Product
     @@gps_products += 1
   end
 
-  def self.products
+  def self.gps_products
     @@video_products
   end
 end
