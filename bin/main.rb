@@ -1,5 +1,15 @@
-class Product 
+class Product
+  def initialize (name, price)
+    @name = name
+    @price = price
+  end   
 end
 
-class Audio
+class Audio < Product
+end
+
+class Video
+end
+
+class Gps
 end

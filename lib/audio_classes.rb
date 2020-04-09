@@ -1,6 +1,7 @@
 require 'nokogiri'
 require'open-uri'
 require './lib/scraper.rb'
+require './lib/module_nodes.rb'
 require './bin/main.rb'
 module ClassesAudio
 class Accesorios < Audio
