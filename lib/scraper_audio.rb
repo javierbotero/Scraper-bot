@@ -23,7 +23,7 @@ File.open('lib/audio_classes.rb', 'w') do |line|
                     @@#{name_category}_number += 1
                   end\n
  
-                  def self.#{name_category}_number
+                  def self.#{name_category}
                     @@#{name_category}_number
                   end
 

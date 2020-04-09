@@ -11,7 +11,7 @@ class Accesorios < Audio
                   end
 
  
-                  def self.Accesorios_number
+                  def self.Accesorios
                     @@Accesorios_number
                   end
 
@@ -29,7 +29,7 @@ class Audifonos < Audio
                   end
 
  
-                  def self.Audifonos_number
+                  def self.Audifonos
                     @@Audifonos_number
                   end
 
@@ -47,7 +47,7 @@ class Controladores_midi < Audio
                   end
 
  
-                  def self.Controladores_midi_number
+                  def self.Controladores_midi
                     @@Controladores_midi_number
                   end
 
@@ -65,7 +65,7 @@ class Microfonos_de_condensador < Audio
                   end
 
  
-                  def self.Microfonos_de_condensador_number
+                  def self.Microfonos_de_condensador
                     @@Microfonos_de_condensador_number
                   end
 
@@ -83,7 +83,7 @@ class Monitores_profesionales < Audio
                   end
 
  
-                  def self.Monitores_profesionales_number
+                  def self.Monitores_profesionales
                     @@Monitores_profesionales_number
                   end
 
@@ -101,7 +101,7 @@ class Preamplificadores < Audio
                   end
 
  
-                  def self.Preamplificadores_number
+                  def self.Preamplificadores
                     @@Preamplificadores_number
                   end
 
@@ -119,7 +119,7 @@ class Tarjetas_de_sonido < Audio
                   end
 
  
-                  def self.Tarjetas_de_sonido_number
+                  def self.Tarjetas_de_sonido
                     @@Tarjetas_de_sonido_number
                   end
 

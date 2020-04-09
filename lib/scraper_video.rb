@@ -24,7 +24,7 @@ File.open('lib/video_classes.rb', 'w') do |line|
                     @@#{name_category}_number += 1
                   end\n
  
-                  def self.#{name_category}_number
+                  def self.#{name_category.downcase}
                     @@#{name_category}_number
                   end
 
@@ -62,5 +62,15 @@ def show_video_categories
 end
 
 def check_products_name(choice)
-  if video_products.include?(choice)
+  video_products.any?{ |k, v| k.downcase == choice) }
+end
+
+def display_products(choice)  
+  results = video_products.filter { |key, value| key.downcase == choice}
+  results.each do |key, value|
+    puts "The number of products is #{Kernel.const_get(key).Kernel.const_get(key.downcase)}"
+    value.each_value do |products|
+      products.display_info
+    end    
+  end 
 end
