@@ -56,3 +56,11 @@ video.each do |list|
     video_products[products_classes][article_name] = object_product
   end
 end
+
+def show_video_categories
+  puts video_products.keys
+end
+
+def check_products_name(choice)
+  if video_products.include?(choice)
+end
