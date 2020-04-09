@@ -2,20 +2,24 @@ require './lib/scraper_audio.rb'
 require './lib/scraper_video.rb'
 require './lib/scraper_gps.rb'
 
-puts "This is a Bot to check all the products and \nprices offered on the Colombian technology woocomerce \nwebsite www.importacionesarturia.com"
+puts "This is a Bot to check all the products and \nprices offered on the Colombian technology woocomerce \nwebsite www.importacionesarturia.com\nplease give a second meanwhile a load\nthe information."
+session_video = SessionVideo.new
+session_video.create_library_video
+# session_audio = SessionAudio.new
+# session_gps = SessionGps.new
 
 loop do
   loop do
-    puts "Please write 'video'/'audio'/'gps' or 'all' to see the \nproducts in these three categories or all products available"
+    puts "\nPlease write 'video'/'audio'/'gps' or 'all' to see the \nproducts in these three categories or all products available\n"
     choice_categories = gets.chomp.downcase
     case choice_categories
     when 'video'
-      show_video_categories
+      session_video.show_video_categories
       loop do
-        puts "write the name of the category to see the products \nor copy paste the name of the category and press enter"
+        puts "\nwrite the name of the category to see the products \nor copy paste the name of the category and press enter"
         choice_video_products = gets.chomp.downcase
-        if check_products_name(choice_video_products)
-          display_products(choice_video_products)
+        if session_video.check_products_name(choice_video_products)
+          session_video.display_products(choice_video_products)
           break
         end
         puts 'Write exactly as possible the products you want to check'  
