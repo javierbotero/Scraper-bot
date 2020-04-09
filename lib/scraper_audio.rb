@@ -5,11 +5,9 @@ require './lib/module_nodes.rb'
 document = NodesPage::DOCUMENT
 node_base = NodesPage::NODE_BASE
 audio = NodesPage::AUDIO
-video = NodesPage::VIDEO
-gps = NodesPage::GPS
 
 File.open('lib/audio_classes.rb', 'w') do |line|
-  line.write "require 'nokogiri'\nrequire'open-uri'\nrequire './lib/scraper.rb'\nrequire './lib/module_nodes.rb'\nrequire './bin/main.rb'\n"
+  line.write "require 'nokogiri'\nrequire 'open-uri'\nrequire './lib/products.rb'\n"
   line.write "module ClassesAudio\n"
   audio.each do |category|        
     link_category = category.search('a')[0]['href']
@@ -47,18 +45,13 @@ audio.each do |list|
     NodesPage.convert_string(x)
   end
   products_classes = NodesPage.class_name(products_classes)
+  audio_products[products_classes] = {}
   products = Nokogiri::HTML(open(link_category))
   articles = products.search("ul[class='products columns-4']").search("div[class='mf-product-details']")
   articles.each do |x|   
     article_name = x.search("div[class='mf-product-content']").search('h2').search('a').text
     article_price = x.search("div[class='mf-product-price-box']").search("span[class='woocommerce-Price-amount amount']")[0].text
-    object_product = Object.const_get('ClassesAudio::' + products_classes).new(article_name, article_price)
-    audio_products[article_name] = object_product
+    object_product = Kernel.const_get('ClassesAudio::' + products_classes).new(article_name, article_price)
+    audio_products[products_classes][article_name] = object_product
   end
 end
-
-pp audio_products
-
-
-
-
