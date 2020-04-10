@@ -17,25 +17,10 @@ class SessionVideo
           NodesPage.convert_string(x)
         end
         name_category = NodesPage.class_name(name_category)     
-        line.write "class #{name_category} < Video
-                      @@#{name_category}_number = 0
-                      @@link_articles = '#{link_category}'
-                      def initialize(name, price_now)
-                        super                    
-                        @@#{name_category}_number += 1
-                      end\n
-     
-                      def self.#{name_category.downcase}
-                        @@#{name_category}_number
-                      end
-    
-                      def self.link_articles
-                        @@link_articles
-                      end
-                    end\n\n"    
+        line.write "  class #{name_category} < Video\n    @@#{name_category}_number = 0\n    @@link_articles = '#{link_category}'\n    def initialize(name, price_now)\n      super\n      @@#{name_category}_number += 1\n    end\n\n    def self.number_articles\n      @@#{name_category}_number\n    end\n\n    def self.link_articles\n      @@link_articles\n    end\n  end\n"
       end
       line.write 'end'
-    end    
+    end
 
     def create_library_video
       @video_products = {}
@@ -62,15 +47,16 @@ class SessionVideo
     end
     
     def check_products_name(choice)
-      @video_products.any?{ |k, v| k.downcase == choice }
+      @video_products.any?{ |k, v| k.downcase == choice.downcase }
     end
-    
-    def display_products(choice)  
-      results = @video_products.filter { |key, value| key.downcase == choice }
+
+    def display_products(choice)
+      results = @video_products.filter { |key, value| key.downcase == choice.downcase }
       results.each do |key, value|
-        puts "The number of products is #{Kernel.const_get(key).Kernel.const_get(key.downcase)}"
-        value.each_value do |products|
-          products.display_info
+        puts "\nThe total number of #{key} is #{Kernel.const_get('ClassesVideo::' + key).number_articles}\n"
+        puts "You can find this articles here: #{Kernel.const_get('ClassesVideo::' + key).link_articles}\n\n"
+        value.each do |key, value|
+          value.display_info          
         end    
       end 
     end    
