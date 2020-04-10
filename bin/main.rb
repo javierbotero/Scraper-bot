@@ -4,10 +4,10 @@ require './lib/scraper_gps.rb'
 
 puts "\n---------------Bot-Page---------------\nThis is a Bot to check all the products and \nprices offered on the Colombian technology \nwoocomerce website www.importacionesarturia.com\nplease give me a second meanwhile\nthe information is loaded.\n"
 session_video = SessionVideo.new
-session_video.create_library_video
 session_audio = SessionAudio.new
-session_audio.create_library_audio
 session_gps = SessionGps.new
+session_video.create_library_video
+session_audio.create_library_audio
 session_gps.create_library_gps
 
 loop do
@@ -64,5 +64,3 @@ loop do
     exit
   end
 end
-
-

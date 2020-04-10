@@ -10,7 +10,7 @@ class SessionAudio
   def initialize
     @audio = NodesPage::AUDIO
     File.open('lib/audio_classes.rb', 'w') do |line|
-      line.write "require './lib/products.rb'\n"
+      line.write "require './lib/products.rb'\n\n"
       line.write "module ClassesAudio\n"
       @audio.each do |category|        
         link_category = category.search('a')[0]['href']

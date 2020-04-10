@@ -3,6 +3,9 @@ AllCops:
     - "README.md"
     - "Guardfile"
     - "Rakefile"
+    - "lib/audio_classes.rb"
+    - "lib/video_classes.rb"
+    - "lib/gps_classes.rb"
 
   DisplayCopNames: true
 

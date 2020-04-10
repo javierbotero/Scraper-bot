@@ -9,7 +9,7 @@ class SessionVideo
   
   def initialize    
     File.open('lib/video_classes.rb', 'w') do |line|
-      line.write "require 'nokogiri'\nrequire 'open-uri'\nrequire './lib/products.rb'\n\n"
+      line.write "require './lib/products.rb'\n\n"
       line.write "module ClassesVideo\n"
       @@video.each do |category|        
         link_category = category.search('a')[0]['href']
