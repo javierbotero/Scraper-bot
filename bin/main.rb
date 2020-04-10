@@ -57,7 +57,12 @@ loop do
   end
   puts "Do you want to check again? (Y/N)"
   anwser = gets.chomp.downcase
-  exit if %w[n no].include?(anwser)
+  if %w[n no].include?(anwser)
+    File.open('./lib/audio_classes.rb', 'w') {|file| file.truncate(0) }
+    File.open('./lib/video_classes.rb', 'w') {|file| file.truncate(0) }
+    File.open('./lib/gps_classes.rb', 'w') {|file| file.truncate(0) }
+    exit
+  end
 end
 
 

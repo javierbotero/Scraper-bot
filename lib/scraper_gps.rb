@@ -60,8 +60,9 @@ class SessionGps
   end
 
   def show_gps_categories
-    puts "\n"
-    puts @gps_products.keys
+    puts ""
+    @gps_products.each_key { |k| puts "#{k}" }
+    puts ""
   end
 
   def check_products_name(choice)
@@ -75,7 +76,6 @@ class SessionGps
       puts "You can find this articles here: #{Kernel.const_get('ClassesGps::' + key).link_articles}\n\n"
       value.each do |key, value|
         value.display_info
-        puts "link of purchase: #{value.link_articles}"
       end
     end
   end

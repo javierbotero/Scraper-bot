@@ -43,7 +43,9 @@ class SessionVideo
     end
     
     def show_video_categories
-      puts @video_products.keys
+      puts ""
+      @video_products.each_key { |k| puts "#{k}" }
+      puts ""
     end
     
     def check_products_name(choice)

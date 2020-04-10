@@ -60,7 +60,9 @@ class SessionAudio
   end
 
   def show_audio_categories
-    puts @audio_products.keys
+    puts ""
+    @audio_products.each_key { |k| puts "#{k}" }
+    puts ""
   end
 
   def check_products_name(choice)
@@ -71,7 +73,7 @@ class SessionAudio
     results = @audio_products.filter { |key, value| key.downcase == choice.downcase }
     results.each do |key, value|
       puts "\nThe total number of #{key} is #{Kernel.const_get('ClassesAudio::' + key).number_articles}\n"
-      puts "You can find this articles in this: #{Kernel.const_get('ClassesAudio::' + key).link_articles}\n\n"
+      puts "You can find this articles here: #{Kernel.const_get('ClassesAudio::' + key).link_articles}\n\n"
       value.each do |key, value|
         value.display_info
       end
