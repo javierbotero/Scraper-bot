@@ -39,6 +39,8 @@ class SessionGps
     end
   end
 
+  include ClassesGps
+
   def create_library_gps
     @gps_products = {}
     @gps.each do |list|

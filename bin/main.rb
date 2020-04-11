@@ -29,7 +29,7 @@ or copy paste the name of the category and press enter\n"
   end
 end
 
-def audio_actions
+def audio_actions(session_audio)
   session_audio.show_audio_categories
   loop do
     puts "\nwrite the name of the category to see the products \n
@@ -43,7 +43,7 @@ or copy paste the name of the category and press enter\n"
   end
 end
 
-def gps_actions
+def gps_actions(session_gps)
   session_gps.show_gps_categories
   loop do
     puts "\nwrite the name of the category to see the products \n
@@ -73,7 +73,7 @@ loop do
       break
     else
       puts "\nWrite exactly the option you want\n"
-    end
+    end    
   end
   puts 'Do you want to check again? (Y/N)'
   anwser = gets.chomp.downcase  
@@ -82,5 +82,4 @@ loop do
   File.open('./lib/video_classes.rb', 'w') {|file| file.truncate(0) }
   File.open('./lib/gps_classes.rb', 'w') {|file| file.truncate(0) }
   exit
-  end
 end
