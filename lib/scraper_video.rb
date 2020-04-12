@@ -3,14 +3,12 @@ require 'open-uri'
 require './lib/module_nodes.rb'
 
 class SessionVideo
-  @@video = NodesPage::VIDEO
-  attr_reader :video_products
-  
-  def initialize    
-    File.open('lib/video_classes.rb', 'w') do |line|
+  def initialize
+    @video = NodesPage::VIDEO
+    File.open('lib/video_classes.rb', 'w+') do |line|
       line.write "require './lib/products.rb'\n\n"
       line.write "module ClassesVideo\n"
-      @@video.each do |category|        
+      @video.each do |category|        
         link_category = category.search('a')[0]['href']
         name_category = category.search('a').text.split('').map do |x| 
           NodesPage.convert_string(x)
@@ -22,4 +20,3 @@ class SessionVideo
     end
   end
 end
-

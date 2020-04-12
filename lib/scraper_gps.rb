@@ -2,14 +2,11 @@ require 'nokogiri'
 require 'open-uri'
 require './lib/module_nodes.rb'
 
-class SessionGps  
-  attr_reader :gps
-  attr_writer :gps_products
-
+class SessionGps
   def initialize
     @gps = NodesPage::GPS
-    File.open('lib/gps_classes.rb', 'w') do |line|
-      line.write "require 'nokogiri'\nrequire 'open-uri'\nrequire './lib/products.rb'\n\n"
+    File.open('lib/gps_classes.rb', 'w+') do |line|
+      line.write "require './lib/products.rb'\n\n"
       line.write "module ClassesGps\n"
       @gps.each do |category|        
         link_category = category.search('a')[0]['href']

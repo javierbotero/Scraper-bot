@@ -1,14 +1,10 @@
 require 'nokogiri'
 require 'open-uri'
 require './lib/module_nodes.rb'
-
 class SessionAudio
-  attr_reader :audio
-  attr_accessor :audio_products
-
   def initialize
     @audio = NodesPage::AUDIO
-    File.open('lib/audio_classes.rb', 'w') do |line|
+    File.open('lib/audio_classes.rb', 'w+') do |line|
       line.write "require './lib/products.rb'\n\n"
       line.write "module ClassesAudio\n"
       @audio.each do |category|        

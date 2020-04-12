@@ -1,9 +1,6 @@
 require './lib/scraper_audio.rb'
 require './lib/scraper_video.rb'
 require './lib/scraper_gps.rb'
-require './lib/user_audio.rb'
-require './lib/user_video.rb'
-require './lib/user_gps.rb'
 
 session_video = SessionVideo.new
 session_audio = SessionAudio.new
@@ -15,6 +12,10 @@ prices offered on the Colombian technology
 woocomerce website www.importacionesarturia.com
 please give me a second meanwhile the information
 is loaded.\n"
+
+require './lib/user_audio.rb'
+require './lib/user_video.rb'
+require './lib/user_gps.rb'
 
 library_video = LibraryVideo.new
 library_audio = LibraryAudio.new
@@ -83,8 +84,8 @@ loop do
   puts 'Do you want to check again? (Y/N)'
   anwser = gets.chomp.downcase  
   next if %w[y ye yes].include?(anwser)
-  # File.open('./lib/audio_classes.rb', 'w') {|file| file.truncate(0) }
-  # File.open('./lib/video_classes.rb', 'w') {|file| file.truncate(0) }
-  # File.open('./lib/gps_classes.rb', 'w') {|file| file.truncate(0) }
+  File.open('./lib/video_classes.rb', 'w+'){ |line| line.truncate(0) }
+  File.open('./lib/audio_classes.rb', 'w+'){ |line| line.truncate(0) }
+  File.open('./lib/gps_classes.rb', 'w+'){ |line| line.truncate(0) }
   exit
 end

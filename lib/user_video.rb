@@ -1,3 +1,5 @@
+require 'nokogiri'
+require 'open-uri'
 require './lib/module_nodes.rb'
 load './lib/video_classes.rb'
 
