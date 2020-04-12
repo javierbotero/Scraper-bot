@@ -2,9 +2,9 @@ require './lib/scraper_audio.rb'
 require './lib/scraper_video.rb'
 require './lib/scraper_gps.rb'
 
-session_video = SessionVideo.new
-session_audio = SessionAudio.new
-session_gps = SessionGps.new
+SessionVideo.new
+SessionAudio.new
+SessionGps.new
 
 puts "\n---------------Bot-Page---------------\n
 This is a Bot to check all the products and
@@ -79,13 +79,14 @@ loop do
       break
     else
       puts "\nWrite exactly the option you want\n"
-    end    
+    end
   end
   puts 'Do you want to check again? (Y/N)'
-  anwser = gets.chomp.downcase  
+  anwser = gets.chomp.downcase
   next if %w[y ye yes].include?(anwser)
-  File.open('./lib/video_classes.rb', 'w+'){ |line| line.truncate(0) }
-  File.open('./lib/audio_classes.rb', 'w+'){ |line| line.truncate(0) }
-  File.open('./lib/gps_classes.rb', 'w+'){ |line| line.truncate(0) }
+
+  File.open('./lib/video_classes.rb', 'w+') { |line| line.truncate(0) }
+  File.open('./lib/audio_classes.rb', 'w+') { |line| line.truncate(0) }
+  File.open('./lib/gps_classes.rb', 'w+') { |line| line.truncate(0) }
   exit
 end
