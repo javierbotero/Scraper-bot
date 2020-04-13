@@ -5,20 +5,26 @@ module NodesPage
   VIDEO = NODE_BASE.search("li[class='cat-item cat-item-42']").search("ul[class='children']").search('li')
   GPS = NODE_BASE.search("li[class='cat-item cat-item-62']").search("ul[class='children']").search('li')
 
-  def self.convert_string(letter)    
+  def self.change_letter(letter)
+    return 'u' if letter == 'ú'
+    return '_' if letter == ' '
+    return letter.downcase if /[A-Z]/.match(letter)
+
+    letter
+  end
+
+  def self.convert_string(letter)
     return 'a' if letter == 'á'
     return 'e' if letter == 'é'
     return 'i' if letter == 'í'
     return 'o' if letter == 'ó'
-    return 'u' if letter == 'ú'
-    return '_' if letter == ' '
-    return letter.downcase if /[A-Z]/.match(letter)
-    letter
+
+    change_letter(letter)
   end
 
   def self.class_name(array)
     array = array.join
     first_part = array[0].upcase
-    name_class = first_part + array[1..-1]
+    first_part + array[1..-1]
   end
 end

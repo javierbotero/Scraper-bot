@@ -1,9 +1,9 @@
 class Product
-  def initialize (name, price)
+  def initialize(name, price)
     @name = name
     @price = price
   end
-  
+
   def display_info
     puts "Product: #{@name}\nPrice: #{@price}"
   end
