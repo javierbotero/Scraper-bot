@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 module NodesPage
   DOCUMENT = Nokogiri::HTML(open('https://importacionesarturia.com/tienda/'))
   NODE_BASE = DOCUMENT.search("ul[class='product-categories']")

@@ -20,7 +20,8 @@ class LibraryVideo
       articles = products.search("ul[class='products columns-4']").search("div[class='mf-product-details']")
       articles.each do |x|
         article_name = x.search("div[class='mf-product-content']").search('h2').search('a').text
-        article_price = x.search("div[class='mf-product-price-box']").search("span[class='woocommerce-Price-amount amount']")[0].text
+        article_price = x.search("div[class='mf-product-price-box']")
+          .search("span[class='woocommerce-Price-amount amount']")[0].text
         object_product = Kernel.const_get('ClassesVideo::' + products_classes).new(article_name, article_price)
         @video_data[products_classes][article_name] = object_product
       end
@@ -28,22 +29,22 @@ class LibraryVideo
   end
 
   def show_video_categories
-    puts ""
-    @video_data.each_key { |k| puts "#{k}" }
-    puts ""
+    puts ''
+    @video_data.each_key { |k| puts k.to_s }
+    puts ''
   end
 
   def check_products_name(choice)
-    @video_data.any?{ |k, v| k.downcase == choice.downcase }
+    @video_data.any? { |k, _v| k.downcase == choice.downcase }
   end
 
   def display_products(choice)
-    results = @video_data.filter { |key, value| key.downcase == choice.downcase }
+    results = @video_data.filter { |key, _value| key.downcase == choice.downcase }
     results.each do |key, value|
       puts "\nThe total number of #{key} is #{Kernel.const_get('ClassesVideo::' + key).number_articles}\n"
       puts "You can find these articles here: #{Kernel.const_get('ClassesVideo::' + key).link_articles}\n\n"
-      value.each do |key, value|
-        value.display_info
+      value.each do |_key, instance_value|
+        instance_value.display_info
       end
     end
   end
