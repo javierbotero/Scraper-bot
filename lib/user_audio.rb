@@ -5,6 +5,7 @@ load './lib/audio_classes.rb'
 
 class LibraryAudio
   include ClassesAudio
+  attr_reader :audio_data
 
   def initialize
     @audio = NodesPage::AUDIO
@@ -46,7 +47,6 @@ class LibraryAudio
   def display_products(choice)
     results = @audio_data.filter { |key, _value| key.downcase == choice.downcase }
     results.each do |key, value|
-      puts "\nThe total number of #{key} is #{Kernel.const_get('ClassesAudio::' + key).number_articles}\n"
       puts "You can find these articles here: #{Kernel.const_get('ClassesAudio::' + key).link_articles}\n\n"
       value.each do |_key, instance_value|
         instance_value.display_info

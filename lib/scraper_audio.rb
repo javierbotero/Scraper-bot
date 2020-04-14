@@ -22,15 +22,10 @@ class SessionAudio
 
   def write_classes(line, name_category, link_category)
     line.write "  class #{name_category} < Audio
-    @@#{name_category}_number = 0
     @@link_articles = '#{link_category}'
     def initialize(name, price_now)
       super
       @@#{name_category}_number += 1
-    end\n
-
-    def self.number_articles
-       @@#{name_category}_number
     end
 
     def self.link_articles
