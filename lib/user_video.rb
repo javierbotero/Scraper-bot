@@ -5,6 +5,7 @@ load './lib/video_classes.rb'
 
 class LibraryVideo
   include ClassesVideo
+  attr_reader :video_data
 
   def initialize
     @video = NodesPage::VIDEO

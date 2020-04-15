@@ -10,7 +10,7 @@ RSpec.describe LibraryAudio do
   end
 
   describe '#creating_instances' do
-    it "creates and instance that can be caled using the key 'Cable XLR Mogami Gold Studio para Micrófono (8m)' inside the hash inside @audio_data with key 'Accesorios'" do
+    it "creates an instance that can be called using the key 'Cable XLR Mogami Gold Studio para Micrófono (8m)' inside the hash inside @audio_data with key 'Accesorios'" do
       custom_object = session_audio.audio_data['Accesorios'].key?('Cable XLR Mogami Gold Studio para Micrófono (8m)')
       expect(custom_object).to eql(true)
     end
