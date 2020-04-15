@@ -41,7 +41,7 @@ class LibraryGps
   def display_products(choice)
     results = @gps_data.filter { |key, _value| key.downcase == choice.downcase }
     results.each do |key, value|
-      puts "You can find these articles here: #{Kernel.const_get('ClassesGps::' + key).link_articles}\n\n"
+      puts "\nYou can find these articles here: #{Kernel.const_get('ClassesGps::' + key).link_articles}\n\n"
       value.each do |_key, instance_value|
         instance_value.display_info
       end

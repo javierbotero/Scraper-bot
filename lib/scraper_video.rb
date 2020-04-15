@@ -23,10 +23,6 @@ class SessionVideo
   def write_classes(line, name_category, link_category)
     line.write "  class #{name_category} < Video
     @@link_articles = '#{link_category}'
-    def initialize(name, price_now)
-      super
-      @@#{name_category}_number += 1
-    end
 
     def self.link_articles
       @@link_articles

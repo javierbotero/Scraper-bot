@@ -21,7 +21,7 @@ RSpec.describe LibraryAudio do
       expect do
         session_audio.show_audio_categories
       end.to output(
-          "\nAccesorios
+"\nAccesorios
 Audifonos
 Controladores_midi
 Microfonos_de_condensador
@@ -43,8 +43,8 @@ Tarjetas_de_sonido\n\n"
     it 'Display all products of with prices after a given ' do
       expect do
         session_audio.display_products('controladores_midi')
-      end.to output("\nThe total number of Controladores_midi is 5
-You can find these articles here: https://importacionesarturia.com/categoria/audio-profesional/controladores-midi/
+      end.to output(
+"\nYou can find these articles here: https://importacionesarturia.com/categoria/audio-profesional/controladores-midi/
 
 Product: Novation Launchkey 25 MK II Controlador
 Price: $649,990

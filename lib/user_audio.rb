@@ -47,7 +47,7 @@ class LibraryAudio
   def display_products(choice)
     results = @audio_data.filter { |key, _value| key.downcase == choice.downcase }
     results.each do |key, value|
-      puts "You can find these articles here: #{Kernel.const_get('ClassesAudio::' + key).link_articles}\n\n"
+      puts "\nYou can find these articles here: #{Kernel.const_get('ClassesAudio::' + key).link_articles}\n\n"
       value.each do |_key, instance_value|
         instance_value.display_info
       end

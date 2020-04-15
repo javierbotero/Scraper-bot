@@ -23,9 +23,6 @@ class SessionGps
   def write_classes(line, name_category, link_category)
     line.write "  class #{name_category} < Gps
     @@link_articles = '#{link_category}'
-    def initialize(name, price_now)
-      super
-    end
 
     def self.link_articles
       @@link_articles
