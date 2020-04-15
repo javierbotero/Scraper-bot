@@ -10,7 +10,8 @@ RSpec.describe LibraryAudio do
   end
 
   describe '#creating_instances' do
-    it "creates an instance that can be called using the key 'Cable XLR Mogami Gold Studio para Micrófono (8m)' inside the hash inside @audio_data with key 'Accesorios'" do
+    it "creates an instance that can be called using the key 'Cable XLR Mogami Gold
+    Studio para Micrófono (8m)' inside the hash inside @audio_data with key 'Accesorios'" do
       custom_object = session_audio.audio_data['Accesorios'].key?('Cable XLR Mogami Gold Studio para Micrófono (8m)')
       expect(custom_object).to eql(true)
     end
@@ -20,15 +21,13 @@ RSpec.describe LibraryAudio do
     it 'print all keys in the hash @audio_data' do
       expect do
         session_audio.show_audio_categories
-      end.to output(
-"\nAccesorios
+      end.to output("\nAccesorios
 Audifonos
 Controladores_midi
 Microfonos_de_condensador
 Monitores_profesionales
 Preamplificadores
-Tarjetas_de_sonido\n\n"
-                   ).to_stdout
+Tarjetas_de_sonido\n\n").to_stdout
     end
   end
 
@@ -43,8 +42,7 @@ Tarjetas_de_sonido\n\n"
     it 'Display all products of with prices after a given ' do
       expect do
         session_audio.display_products('controladores_midi')
-      end.to output(
-"\nYou can find these articles here: https://importacionesarturia.com/categoria/audio-profesional/controladores-midi/
+      end.to output("\nYou can find these articles here: https://importacionesarturia.com/categoria/audio-profesional/controladores-midi/
 
 Product: Novation Launchkey 25 MK II Controlador
 Price: $649,990

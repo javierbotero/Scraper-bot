@@ -10,8 +10,10 @@ RSpec.describe LibraryVideo do
   end
 
   describe '#creating_instances' do
-    it "creates an instance that can be called using the key 'Canon XA40 Videocámara UHD 4K Incluye Memoria de 64Gb de 80Mb/s' inside the hash which is inside @video_data with key 'Camaras_de_video'" do
-      custom_object = session_video.video_data['Camaras_de_video'].key?('Canon XA40 Videocámara UHD 4K Incluye Memoria de 64Gb de 80Mb/s')
+    it "creates an instance that can be called using the key 'Canon XA40 Videocámara UHD 4K
+    Incluye Memoria de 64Gb de 80Mb/s' inside the hash which is inside @video_data with key 'Camaras_de_video'" do
+      custom_object = session_video.video_data['Camaras_de_video']
+        .key?('Canon XA40 Videocámara UHD 4K Incluye Memoria de 64Gb de 80Mb/s')
       expect(custom_object).to eql(true)
     end
   end
@@ -20,8 +22,7 @@ RSpec.describe LibraryVideo do
     it 'print all keys in the hash @video_data' do
       expect do
         session_video.show_video_categories
-      end.to output(
-"\nAccesorios
+      end.to output("\nAccesorios
 Baterias_y_battery_grip
 Camaras_canon
 Camaras_de_video
@@ -37,8 +38,7 @@ Lentes_nikon
 Luces_y_flash_godox
 Microfonos_boom_y_solapa
 Tripodes
-Tripodes_slider_dolly\n\n"
-                   ).to_stdout
+Tripodes_slider_dolly\n\n").to_stdout
     end
   end
 
@@ -53,8 +53,7 @@ Tripodes_slider_dolly\n\n"
     it 'Display all products of with prices after a given ' do
       expect do
         session_video.display_products('camaras_de_video')
-      end.to output(
-"\nYou can find these articles here: https://importacionesarturia.com/categoria/camaras-fotografia-y-video/camaras-de-video/
+      end.to output("\nYou can find these articles here: https://importacionesarturia.com/categoria/camaras-fotografia-y-video/camaras-de-video/
 
 Product: Canon XA40 Videocámara UHD 4K Incluye Memoria de 64Gb de 80Mb/s
 Price: $6,299,990

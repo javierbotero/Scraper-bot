@@ -10,7 +10,8 @@ RSpec.describe LibraryGps do
   end
 
   describe '#creating_instances' do
-    it "creates an instance that can be use with the key 'Gps 64s Garmin' inside the hash which is inside @gps_data with key 'Gps_garmin'" do
+    it "creates an instance that can be use with the key 'Gps 64s Garmin' inside the hash which is
+    inside @gps_data with key 'Gps_garmin'" do
       custom_object = session_gps.gps_data['Gps_garmin'].key?('Gps 64s Garmin')
       expect(custom_object).to eql(true)
     end
@@ -35,8 +36,7 @@ RSpec.describe LibraryGps do
     it 'Display all products of gps_garmin with prices and name' do
       expect do
         session_gps.display_products('Gps_garmin')
-      end.to output(
-"\nYou can find these articles here: https://importacionesarturia.com/categoria/gps/gps-garmin/
+      end.to output("\nYou can find these articles here: https://importacionesarturia.com/categoria/gps/gps-garmin/
 
 Product: Gps 64s Garmin
 Price: $1,099,990
