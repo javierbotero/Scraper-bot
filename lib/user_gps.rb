@@ -5,6 +5,7 @@ load './lib/gps_classes.rb'
 
 class LibraryGps
   include ClassesGps
+  attr_reader :gps_data
 
   def initialize
     @gps_products = NodesPage::GPS
