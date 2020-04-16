@@ -1,4 +1,4 @@
-require './lib/user_video.rb'
+require_relative '../lib/user_video.rb'
 
 RSpec.describe LibraryVideo do
   let(:session_video) { LibraryVideo.new }

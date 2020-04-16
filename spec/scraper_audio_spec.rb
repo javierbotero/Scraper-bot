@@ -1,4 +1,4 @@
-require './lib/scraper_audio.rb'
+require_relative '../lib/scraper_audio.rb'
 require 'stringio'
 load './lib/audio_classes.rb'
 

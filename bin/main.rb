@@ -1,6 +1,6 @@
-require './lib/scraper_audio.rb'
-require './lib/scraper_video.rb'
-require './lib/scraper_gps.rb'
+require_relative '../lib/scraper_audio.rb'
+require_relative '../lib/scraper_video.rb'
+require_relative '../lib/scraper_gps.rb'
 
 SessionVideo.new
 SessionAudio.new
@@ -13,9 +13,9 @@ woocomerce website www.importacionesarturia.com
 please give me a second meanwhile the information
 is loaded.\n"
 
-require './lib/user_audio.rb'
-require './lib/user_video.rb'
-require './lib/user_gps.rb'
+require_relative '../lib/user_audio.rb'
+require_relative '../lib/user_video.rb'
+require_relative '../lib/user_gps.rb'
 
 library_video = LibraryVideo.new
 library_audio = LibraryAudio.new

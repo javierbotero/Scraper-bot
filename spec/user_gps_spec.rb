@@ -1,4 +1,4 @@
-require './lib/user_gps.rb'
+require_relative '../lib/user_gps.rb'
 
 RSpec.describe LibraryGps do
   let(:session_gps) { LibraryGps.new }

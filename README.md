@@ -3,9 +3,26 @@
 > This is a Bot that scrapes all the products available in the page mention above. It is the more important sellers of technology in Colombia of products for photographers, videographers and sound engineers.
 
 1. Fork or download the project on your desktop.
-2. Being inside the folder where you downloaded the project write in the terminal `ruby bin/main.rb`.
-3. The Bot is going to ask you to write for categories to list products and prices, just write them the more accurate as the bot shows you.
-4. The files audio_classes.rb, video_classes.rb and gps_classes.rb are files that in the beginning, are empty. After code runs these files are dynamically populated with a Module with classes that are going to use later to build the instances object of every category.
+2. Being inside the folder where you downloaded the project write in the terminal
+```
+ruby bin/main.rb
+```
+
+3. The Bot is going to ask you to write for categories to list products and prices, just write them the more accurate as the bot shows you, for example:
+
+```
+video
+```
+
+and then select a products category
+
+```
+accesorios
+```
+
+After that, you will see a list with name, price, description and, link of the products of that category.
+
+4. The files audio_classes.rb, video_classes.rb and gps_classes.rb are files that in the beginning are empty. After code runs these files are dynamically populated with a Module with classes that are going to be used later to build the instances object of every category.
 
 ## Built With
 

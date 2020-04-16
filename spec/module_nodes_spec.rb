@@ -1,4 +1,4 @@
-require './lib/module_nodes.rb'
+require_relative '../lib/module_nodes.rb'
 require 'nokogiri'
 require 'open-uri'
 

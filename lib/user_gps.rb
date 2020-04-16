@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require './lib/module_nodes.rb'
+require_relative 'module_nodes.rb'
 load './lib/gps_classes.rb'
 
 class LibraryGps
@@ -11,22 +11,27 @@ class LibraryGps
     @gps_products = NodesPage::GPS
     @gps_data = {}
     @gps_products.each do |list|
-      link_category = list.search('a')[0]['href']
+      @link_category = list.search('a')[0]['href']
       products_classes = list.search('a').text.split('').map do |x|
         NodesPage.convert_string(x)
       end
       products_classes = NodesPage.class_name(products_classes)
       @gps_data[products_classes] = {}
-      products = Nokogiri::HTML(URI.open(link_category))
+      products = Nokogiri::HTML(URI.open(@link_category))
       articles = products.search("ul[class='products columns-4']").search("div[class='mf-product-details']")
-      articles.each do |x|
-        article_name = x.search("div[class='mf-product-content']").search('h2').search('a').text
-        article_price = x.search("div[class='mf-product-price-box']")
-          .search("span[class='woocommerce-Price-amount amount']")[0].text
-        object_product = Kernel.const_get('ClassesGps::' + products_classes).new(article_name, article_price)
-        @gps_data[products_classes][article_name] = object_product
+      articles.each do |product|
+        creating_instances(product, products_classes)
       end
     end
+  end
+
+  def creating_instances(product, products_classes)
+    article_name = product.search("div[class='mf-product-content']").search('h2').search('a').text
+    article_price = product.search("div[class='mf-product-price-box']")
+      .search("span[class='woocommerce-Price-amount amount']")[0].text
+    article_link = product.search("div[class='mf-product-content']").search('h2').search('a')[0]['href']
+    object_product = Kernel.const_get('ClassesGps::' + products_classes).new(article_name, article_price, article_link)
+    @gps_data[products_classes][article_name] = object_product
   end
 
   def show_gps_categories
@@ -42,7 +47,7 @@ class LibraryGps
   def display_products(choice)
     results = @gps_data.filter { |key, _value| key.downcase == choice.downcase }
     results.each do |key, value|
-      puts "\nYou can find these articles here: #{Kernel.const_get('ClassesGps::' + key).link_articles}\n\n"
+      puts "\nYou can find these articles here: #{@link_category}\n\n"
       value.each do |_key, instance_value|
         instance_value.display_info
       end

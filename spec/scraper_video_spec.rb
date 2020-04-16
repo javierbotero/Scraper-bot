@@ -1,4 +1,4 @@
-require './lib/scraper_video.rb'
+require_relative '../lib/scraper_video.rb'
 require 'stringio'
 load './lib/video_classes.rb'
 

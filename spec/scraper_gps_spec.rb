@@ -1,4 +1,4 @@
-require './lib/scraper_gps.rb'
+require_relative '../lib/scraper_gps.rb'
 require 'stringio'
 load './lib/gps_classes.rb'
 

@@ -1,4 +1,4 @@
-require './lib/user_audio.rb'
+require_relative '../lib/user_audio.rb'
 
 RSpec.describe LibraryAudio do
   let(:session_audio) { LibraryAudio.new }
