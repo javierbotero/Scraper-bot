@@ -37,7 +37,7 @@ Tarjetas_de_sonido\n\n").to_stdout
       expect(answer).to eql(true)
     end
   end
-
+  # rubocop:disable Layout/LineLength
   describe '#display_products' do
     it 'Display all products of the given controladores_midi with with all the information of each product' do
       expect do
@@ -69,5 +69,6 @@ Price: $1,299,990
 Information: 49 teclas semipesadas con Aftertouch, 8 codificadores rotativos y 9 faders, 8 almohadillas de gatillo retroiluminadas, Arpegiador, Software de control automático, Lanzamiento de Clip Ableton, Compatible con Mac / Windows, Melódica: Lecciones gratuitas de tecla y almohadilla de batería.
 Link: https://importacionesarturia.com/producto/novation-impulse-49/\n\n").to_stdout
     end
+    # rubocop:enable Layout/LineLength
   end
 end

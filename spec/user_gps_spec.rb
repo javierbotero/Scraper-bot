@@ -40,12 +40,12 @@ RSpec.describe LibraryGps do
 
 Product: Gps 64s Garmin
 Price: $1,099,990
-Information: 
+Information:
 Link: https://importacionesarturia.com/producto/garmin-gpsmap-64s/
 
 Product: Gps 78s Garmin
 Price: $879,990
-Information: 
+Information:
 Link: https://importacionesarturia.com/producto/garmin-gpsmap-78s/\n\n").to_stdout
     end
   end

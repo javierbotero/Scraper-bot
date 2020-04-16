@@ -49,6 +49,8 @@ Tripodes_slider_dolly\n\n").to_stdout
     end
   end
 
+  # rubocop:disable Layout/LineLength
+
   describe '#display_products' do
     it 'Display all products of the given category camaras_de_video with all the information of the product' do
       expect do
@@ -70,5 +72,6 @@ Price: $3,349,990
 Information: Grabación de video Full HD 1080p60, 1 / 2.84 “, 2.9MP HD CMOS Pro Sensor, Canon HD f / 1.8-2.9 lente de zoom, Óptico 20x, zoom digital 400x, Estabilización de imagen óptica inteligente, Pantalla táctil capacitiva LCD de 3.0 “, Captura de movimiento lento / rápido de 2x a 1200x, Graba AVCHD y MP4 en 2 ranuras para tarjetas SD, Apertura de 8 cuchillas, amplio rango dinámico, Resalte el modo de prioridad.
 Link: https://importacionesarturia.com/producto/canon-vixia-hf-g21-videocamara-memoria-64gb/\n\n").to_stdout
     end
+    # rubocop:enable Layout/LineLength
   end
 end
