@@ -33,15 +33,20 @@ RSpec.describe LibraryGps do
   end
 
   describe '#display_products' do
-    it 'Display all products of gps_garmin with prices and name' do
+    it 'Display all products of gps_garmin with all the information for each product' do
       expect do
         session_gps.display_products('Gps_garmin')
       end.to output("\nYou can find these articles here: https://importacionesarturia.com/categoria/gps/gps-garmin/
 
 Product: Gps 64s Garmin
 Price: $1,099,990
+Information: 
+Link: https://importacionesarturia.com/producto/garmin-gpsmap-64s/
+
 Product: Gps 78s Garmin
-Price: $879,990\n").to_stdout
+Price: $879,990
+Information: 
+Link: https://importacionesarturia.com/producto/garmin-gpsmap-78s/\n\n").to_stdout
     end
   end
 end
