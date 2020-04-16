@@ -31,7 +31,14 @@ class LibraryAudio
       "div[class='mf-product-price-box']"
     ).search("span[class='woocommerce-Price-amount amount']")[0].text
     article_link = product.search("div[class='mf-product-content']").search('h2').search('a')[0]['href']
-    object_product = Kernel.const_get('ClassesAudio::' + products_classes).new(article_name, article_price, article_link)
+    article_description = product.search("div[class='mf-product-content']")
+      .search("div[class='woocommerce-product-details__short-description']")
+        .search('ul').search('li')
+    information = ''
+    article_description.each_with_index do |article, index|
+      index == article_description.size - 1 ? information << article.text + '.' : information << article.text + ', '
+    end
+    object_product = Kernel.const_get('ClassesAudio::' + products_classes).new(article_name, article_price, information, article_link)
     @audio_data[products_classes][article_name] = object_product
   end
 

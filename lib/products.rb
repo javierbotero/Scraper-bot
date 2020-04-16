@@ -1,12 +1,13 @@
 class Product
-  def initialize(name, price, link)
+  def initialize(name, price, information, link)
     @name = name
     @price = price
+    @information = information
     @link = link
   end
 
   def display_info
-    puts "Product: #{@name}\nPrice: #{@price}\nLink: #{@link}\n\n"
+    puts "Product: #{@name}\nPrice: #{@price}\nInformation: #{@information}\nLink: #{@link}\n\n"
   end
 end
 
