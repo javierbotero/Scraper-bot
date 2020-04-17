@@ -31,11 +31,11 @@ After that, you will see a list with name, price, description and, link of the p
 - Rubocop
 - RSpec
 
-## Author
-
 ## Live Demo
 
 [![Run on Repl.it](https://repl.it/badge/github/javierbotero/Scraper-bot)](https://repl.it/github/javierbotero/Scraper-bot)
+
+## Author
 
 👤 **Javier Botero**
 
