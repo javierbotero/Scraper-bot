@@ -57,7 +57,7 @@ class LibraryGps
   end
 
   def display_products(choice)
-    results = @gps_data.filter { |key, _value| key.downcase == choice.downcase }
+    results = @gps_data.select { |key, _value| key.downcase == choice.downcase }
     results.each do |_key, value|
       puts "\nYou can find these articles here: #{@link_category}\n\n"
       value.each do |_key, instance_value|
