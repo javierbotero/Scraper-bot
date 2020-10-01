@@ -40,7 +40,7 @@ After that, you will see a list with name, price, description and, link of the p
 👤 **Javier Botero**
 
 - Github: [@javierbotero](/github.com/javierbotero)
-- Twitter: [@javierbotero1](https://twitter.com/JavierBotero1)
+- Twitter: [@javierbotero1](https://twitter.com/Javierboterodev)
 - Linkedin: [Javier Botero](https://www.linkedin.com/in/javierboterodev/)
 
 ## 🤝 Contributing
